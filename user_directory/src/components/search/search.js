@@ -1,27 +1,27 @@
-import React from "react";
-import "./style.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import React from "react";
+// import "./style.css";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function seach(props) {
-    return (
+// function Search(props) {
+//     return (
 
-        <div className="app">
-            <br></br>
-            <br></br>
-            <nav class="navbar navbar-light bg-light">
-                <form>
-                    <div class="row">
-                        <div class="form">
-                            <input type="text" class="form-control" placeholder="search" />
-                        </div>
-                    </div>
-                </form>
-            </nav>
+//         <div className="app">
+//             <nav className="navbar navbar-light bg-light">
+//                 <form>
+//                     <div className="row">
+//                         <div className="form">
+//                             <input type="text" className="form-control" placeholder="search" {...props.name} />
+//                         </div>
+//                     </div>
+//                 </form>
+//             </nav>
+//             <br></br>
+//             <br></br>
 
-        </div>
+//         </div>
 
-    )
-}
+//     )
+// }
 
-export default seach;
+// export default Search;

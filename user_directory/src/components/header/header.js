@@ -9,7 +9,7 @@ function header(props) {
         <div className="app">
             <nav className="navbar navbar-light" id="headerNav">
                 <div className='col-md-12' id='head'>
-                    <h1 className="title">{props.children}</h1>
+                    <h1 className="title">Employee Directory</h1>
                     <h3 className="subTitle">Click on carrots to filter by heading or use the search box to narrow your results.</h3>
                 </div>
             </nav>
