@@ -10,7 +10,7 @@ import "./App.css"
 class App extends Component {
   state = {
     employees,
-    search: ""
+    search: "",
   };
 
   handleInputChange = event => {
@@ -29,6 +29,8 @@ class App extends Component {
         return emp.name.indexOf(this.state.search) !== -1;
       }
     )
+
+    
     return (
       <Wrapper>
         <Title></Title>
@@ -45,7 +47,9 @@ class App extends Component {
           <div className="row" id="characters">
         <div className="col-md-1"></div>
         <div className="col-md-2">image</div>
-        <div className="col-md-2">name</div>
+        <button id="btn" className="col-md-2">
+        name
+        </button>
       <div className="col-md-2">phone</div>
       <div className="col-md-3">email</div>
       <div className="col-md-2">dob</div>
