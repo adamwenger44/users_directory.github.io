@@ -5,6 +5,7 @@ import EmployeeInfo from "./components/employeeInfo/employeeInfo"
 import Title from "./components/header/header"
 // import Search from "./components/search/search"
 import employees from "./employees.json"
+import "./App.css"
 
 class App extends Component {
   state = {
@@ -22,37 +23,36 @@ class App extends Component {
     });
   };
 
-  handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
-
-    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    alert(`Hello ${this.state.search}`);
-    this.setState({
-      search: ""
-    });
-  };
-
   render() {
+    let filteredEmployees = this.state.employees.filter(
+      (emp) => {
+        return emp.name.indexOf(this.state.search) !== -1;
+      }
+    )
     return (
       <Wrapper>
         <Title></Title>
         <div>
-        <p>
-          Hello {this.state.search}
-        </p>
-        <form className="form">
-          <input
-            value={this.state.search}
-            name="search"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="search"
-          />
-          <button onClick={this.handleFormSubmit}>Submit</button>
-        </form>
+          <form className="form">
+            <input
+              value={this.state.search}
+              name="search"
+              onChange={this.handleInputChange}
+              type="text"
+              placeholder="search"
+            />
+          </form>
+          <div className="row" id="characters">
+        <div className="col-md-1"></div>
+        <div className="col-md-2">image</div>
+        <div className="col-md-2">name</div>
+      <div className="col-md-2">phone</div>
+      <div className="col-md-3">email</div>
+      <div className="col-md-2">dob</div>
+
       </div>
-        {employees.map(employees => (
+        </div>
+        {filteredEmployees.sort((a, b) => a.name.localeCompare(b.name)).map(employees => (
           <EmployeeInfo
             id={employees.id}
             key={employees.id}
